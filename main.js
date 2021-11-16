@@ -65,13 +65,13 @@ function getNewToken(oAuth2Client, callback) {
 
 
 function listMessages(auth, query){
-  query = 'harshavardhanaws474@gmail.com';
+  query = '<EMAIL ID>';
   return new Promise((resolve, reject) => {    
     const gmail = google.gmail({version: 'v1', auth});
     gmail.users.messages.list(      
       {        
         userId: 'me',  
-        q:'harshavardhanaws474@gmail.com is:unread',      
+        q:'<EMAIL ID> is:unread',      
         maxResults:1     
       },  (err, res) => {        
                     if (err) {        
@@ -113,6 +113,6 @@ async function whatsapp(params) {
     console.log(params);
     var message = JSON.stringify(params);
     await fetch(
-        "https://api.callmebot.com/whatsapp.php?phone=+918367426378&text="+message+"&apikey=204898"
+        "https://api.callmebot.com/whatsapp.php?phone=<MOBILE NUMBER>&text="+message+"&apikey=<API KEY>"
     );
 }
